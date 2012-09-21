@@ -12,12 +12,12 @@ Wrapping Rexster as a _Unix daemon_ or as a _Windows service_ enables the manage
 
 h1. Downloading the Wrapper
 
-To get started, first download download @procrun@. "Procrun":http://commons.apache.org/daemon/procrun.html is a set of applications which allow Windows users to wrap (mostly) Java applications (e.g. Tomcat) as a Windows service. The service can be set to automatically start when the machine boots and will continue to run even when no user is logged onto the machine.
+To get started, first download @procrun@. "Procrun":http://commons.apache.org/daemon/procrun.html is a set of applications which allow Windows users to wrap (mostly) Java applications (e.g. Tomcat) as a Windows service. The service can be set to automatically start when the machine boots and will continue to run even when no user is logged onto the machine.
 
  # Go to the "Apache Commons Daemon download page":http://commons.apache.org/daemon/download_daemon.cgi.
  # Click on *Browse native binaries download area...*: note the index *commons/daemon/binaries/* (even if the title in the page reports *Index of dist/commons*).
  # Click on *windows*. Note the index of *commons/daemon/binaries/windows*.
- # Click on *commons-daemon-1.0.7-bin-windows.zip*. The download starts.
+ # Click on *commons-daemon-?.?.?-bin-windows.zip*. The download starts.
  # Unzip the file in a directory of your choice. The content of the archive is depicted below:
 
 ```text
@@ -98,8 +98,8 @@ EXIT /B
 
 The script requires two input parameters:
 
-# The location of jvm.dll, for example _C:\Program Files\Java\jdk1.6.0_26\jre\bin\server\jvm.dll_
-# The location of the actual Rexster Home (the one under the _target_ folder), for example _D:\rexster-0.5\target\rexster-?.?-standalone_
+# The location of jvm.dll, for example _C:\Program Files\Java\jdk1.???\jre\bin\server\jvm.dll_
+# The location of the actual Rexster Home (the one under the _target_ folder), for example _D:\rexster-?.?\target\rexster-?.?-standalone_
 
 The service is actually installed when executing @Rexster.exe@ (originally @prunsrv@) with the appropriate set of command line arguments and parameters as shown above.
 
@@ -133,7 +133,7 @@ In order to install the service:
 # Execute the _installService.bat_ specifying the _jvm.dll_ location and the Rexster Home as full paths, for example typing in the shell:
 
 ```bat
->installService.bat "C:\Program Files\Java\jdk1.6.0_26\jre\bin\server\jvm.dll" D:\rexster-?.?\target\rexster-?.?-standalone
+>installService.bat "C:\Program Files\Java\jdk1.???\jre\bin\server\jvm.dll" D:\rexster-?.?\target\rexster-?.?-standalone
 ```
 
 Check to see that the service is running, by opening the Windows Services Management Console - from the taskbar, click on _Start_, _Control Panel_, _Administrative Tools_ and then _Service_ - and check the existance of a service with the same name specified as value of the @--DisplayName@ parameter (in this case @Rexster@).
